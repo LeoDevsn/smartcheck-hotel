@@ -38,11 +38,19 @@ O projeto demonstra essa melhoria operacional de forma conceitual. Não reproduz
 
 Esses requisitos expressam a solução idealizada por LeoDevsn. Os comportamentos técnicos abaixo foram escolhidos pelo Codex para viabilizar a demonstração e não devem ser atribuídos ao autor como requisitos operacionais nem ao funcionamento real do hotel.
 
+### Atendimento sem quarto: passante ou pagamento na hora
+
+Conforme esclarecimento de LeoDevsn, **a ausência de quarto não impede a abertura de uma mesa**: existe a opção de atendimento como **passante** ou com **pagamento na hora**. A proposta do SmartCheck melhora a consulta da pré-autorização quando o atendimento está vinculado a um quarto; não propõe restringir a abertura de mesas a hóspedes com quarto.
+
+O protótipo atual demonstra somente o caminho vinculado a um quarto cadastrado e ainda não representa essas alternativas. Seu bloqueio de entrada vazia ou quarto não cadastrado é uma limitação da implementação feita pelo Codex, não uma regra da operação nem uma sugestão do autor. Ausência de quarto, quarto não cadastrado no protótipo e autorização NÃO são situações distintas.
+
+Os detalhes de como representar passante e pagamento na hora na interface precisam ser explicados e aprovados pelo autor antes de qualquer alteração no código. A forma de integração desses caminhos ao sistema real dependeria de avaliação da operação e da equipe de TI ou do fornecedor.
+
 ## Decisões de implementação e limitações da simulação
 
 | Escolha do Codex no protótipo | Finalidade e limite |
 | --- | --- |
-| Quarto sem cadastro não abre mesa | Delimita o cenário demonstrativo aos quartos disponíveis. Não define o tratamento operacional de informação ausente. |
+| O protótipo exige um dos quartos cadastrados para abrir a mesa | Limitação do caminho demonstrado pelo Codex. Não contempla passante ou pagamento na hora, opções esclarecidas pelo autor. Não significa que uma mesa real dependa de quarto. |
 | Alterar a autorização com mesa aberta atualiza o indicador e reapresenta o aviso | Torna a alteração visível na demonstração. Não é uma regra original do autor para atualização de mesas reais. |
 | Apenas uma mesa aberta por vez | Simplifica o estado da interface. Não representa a capacidade ou a organização do hotel. |
 | Encerrar a mesa descarta os pedidos | Permite reiniciar o exercício. Não define política de exclusão, fechamento ou retenção de registros reais. |

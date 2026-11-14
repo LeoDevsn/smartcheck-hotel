@@ -34,3 +34,9 @@ Foram alterados somente README, documentos Markdown e textos do PPTX. HTML, CSS,
 O PPTX continua com cinco slides. A revisão preservou estrutura e formatação, substituindo apenas conteúdo textual. A integridade do arquivo e os limites dos elementos foram verificados; revisão visual em PowerPoint continua pendente. A comparação documental não exige repetir testes de comportamento cujo código não foi alterado; os dez testes anteriores permanecem registrados como resultado da entrega original.
 
 Qualquer mudança futura no código, nas regras ou no comportamento deverá ser explicada e submetida à aprovação do autor antes de sua implementação, conforme solicitado nesta revisão.
+
+## Esclarecimento posterior do autor — atendimento sem quarto
+
+LeoDevsn esclareceu que a ausência de quarto não impede abrir mesa: existem as opções de passante ou pagamento na hora. A proposta melhora a consulta de pré-autorização por quarto, sem estabelecer quarto como condição obrigatória de atendimento.
+
+README, guia, fluxogramas, roteiro, registro de validação e slide da proposta foram esclarecidos. O protótipo continua limitado ao caminho por quarto cadastrado. Não foram alterados código, regras ou comportamento; uma implementação dos caminhos alternativos depende de explicação e aprovação prévia do autor.

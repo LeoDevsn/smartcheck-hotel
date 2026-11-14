@@ -21,6 +21,8 @@ Não localizar uma autorização não equivale a uma autorização negada. Carre
 
 ## Solução conceitual definida pelo autor — TO-BE
 
+O fluxo abaixo recorta apenas a consulta de pré-autorização para atendimento vinculado a quarto. Segundo o autor, também é possível abrir mesa sem quarto, como passante ou com pagamento na hora. Essas alternativas não são impedidas pela proposta e não estão representadas no protótipo atual.
+
 Este fluxo contém os requisitos centrais idealizados por LeoDevsn. O tratamento de exceções deve ser avaliado antes de uma eventual implantação.
 
 ```mermaid

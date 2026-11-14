@@ -29,6 +29,8 @@ Os testes exercitam escolhas de implementação do Codex e a representação dos
 
 ## Limites da verificação
 
+O autor esclareceu que a operação permite mesa sem quarto, como passante ou com pagamento na hora. O protótipo e seus testes ainda não cobrem esses caminhos. Os testes que recusam quarto ausente verificam uma limitação técnica atual; não validam uma exigência operacional de quarto para abrir mesa.
+
 A infraestrutura de controle de navegador prevista para este ambiente não estava disponível. Não houve execução em navegador real, captura de tela, inspeção visual em celular, teste com leitores de tela ou validação do foco e da modalidade nativos do `dialog`.
 
 Os testes de interface usam jsdom e substituem `showModal` e `close` por implementações simplificadas. Eles verificam a lógica e a atualização do DOM, não o comportamento completo do navegador. A apresentação foi verificada estruturalmente; não foi renderizada por PowerPoint ou LibreOffice, portanto a revisão visual final dos slides permanece pendente.

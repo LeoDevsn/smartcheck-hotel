@@ -16,6 +16,8 @@ Mostrar o caminho: quarto → resultado → detalhes → hóspede → cadastro. 
 
 ## Slide 3 — Solução proposta
 
+Esclarecer na apresentação: “A mesa também pode ser aberta sem quarto, como passante ou com pagamento na hora. O SmartCheck simplifica a consulta quando há vínculo com quarto; não torna o quarto obrigatório.” A demonstração atual mostra somente o caminho por quarto.
+
 Atribuir expressamente os requisitos da solução a LeoDevsn. Explicar os três campos na recepção e a autorização vinculada ao quarto. Na abertura da mesa, mostrar a janela temporária. Fechar no X e apontar que só o número do quarto e ASSINA: SIM/NÃO permanecem na área de autorização da mesa.
 
 Se aparecer uma situação de quarto sem cadastro, atualização com mesa aberta ou encerramento, esclarecer que o comportamento exibido foi escolhido pelo Codex para o protótipo. Não o apresentar como requisito original do autor.

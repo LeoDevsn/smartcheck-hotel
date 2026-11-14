@@ -75,6 +75,8 @@ $('cadastro').addEventListener('submit', (evento) => {
 
 ## 4. Como o cadastro chega à mesa — `app.js`, bloco 5
 
+No contexto operacional esclarecido pelo autor, é possível abrir mesa sem quarto, como passante ou com pagamento na hora. O código atual demonstra apenas o caminho por quarto; a recusa de entrada vazia ou cadastro ausente não deve ser interpretada como regra da proposta. Esses caminhos alternativos ainda não estão implementados.
+
 ```js
 const dados = regras.consultarQuarto(quartos, $('quarto-mesa').value);
 mesaAberta = { numero: dados.numero, pedidos: [] };
