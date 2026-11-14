@@ -49,3 +49,7 @@ Não se afirma conformidade WCAG, aprovação operacional, integração com hote
 8. Lançar água e café, remover um item e encerrar a mesa. Não deve ocorrer cobrança ou persistência.
 9. Confirmar a faixa proposta para 20 e 100 atendimentos; tentar zero e quantidade fracionária.
 10. Abrir os cinco slides em PowerPoint ou aplicativo compatível e revisar fontes, quebras de linha e alinhamentos.
+
+## Atualização visual da apresentação executiva
+
+A reorganização do HTML e dos estilos foi verificada novamente com os dez testes existentes: todos passaram em DOM simulado. Os arquivos de lógica, testes e dependências foram comparados com a versão anterior e permaneceram intactos. Identificadores, campos, restrições, vínculos e referências ARIA foram conferidos. A direção visual e os limites da revisão estão em `APRESENTACAO-EXECUTIVA.md`; inspeção real da página e da impressão permanece pendente.

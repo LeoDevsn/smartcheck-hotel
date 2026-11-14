@@ -4,6 +4,12 @@
 
 Observação do problema operacional e idealização da melhoria: **LeoDevsn**. A IA apoiou a análise, a documentação e o desenvolvimento do protótipo. As decisões de implementação tomadas pelo Codex estão identificadas separadamente dos requisitos definidos pelo autor. Não é um sistema implantado, não representa o software do hotel e não contém dados reais de hóspedes. O apoio de IA ocorreu no desenvolvimento; a aplicação não executa um modelo de IA.
 
+## Apresentação para avaliação
+
+A página organiza a leitura em contexto operacional, solução conceitual, impacto a investigar, demonstração e próximos passos. A autoria aparece junto à proposta, e os detalhes técnicos ficam nos materiais de apoio. A interface inclui estilos para impressão: no navegador, use **Ctrl+P** (ou **Cmd+P**) para imprimir ou salvar como PDF; os controles interativos são omitidos nessa versão. A aparência final da impressão ainda requer conferência no navegador.
+
+A direção visual e os limites de verificação estão em [docs/APRESENTACAO-EXECUTIVA.md](docs/APRESENTACAO-EXECUTIVA.md).
+
 ## Experimentar
 
 Extraia a pasta completa e abra `index.html` em um navegador moderno com suporte a `<dialog>`. Não é necessário instalar bibliotecas para usar a demonstração; mantenha `core.js`, `app.js` e `style.css` ao lado do HTML. Tudo funciona sem conexão depois de extrair os arquivos.
@@ -65,7 +71,7 @@ Os detalhes de como representar passante e pagamento na hora na interface precis
 | Botões selecionam o quarto fora do formulário; observação vazia fica oculta; texto usa `textContent`; janela usa `dialog` | Escolhas de interface e tratamento de dados da implementação. A seleção de quarto é contexto de edição, não um quarto campo de cadastro. |
 | Entradas adicionais usadas nos testes, como quarto 9999 e valores inválidos | Casos artificiais para verificar o código; não são dados operacionais nem requisitos da proposta. |
 
-Essas escolhas descrevem o estado atual do protótipo. Não foram homologadas como regras operacionais. Esta revisão altera somente documentação e textos dos slides; o código e o comportamento da demonstração foram preservados.
+Essas escolhas descrevem o estado atual do protótipo. Não foram homologadas como regras operacionais. A revisão de autoria alterou somente documentação e textos dos slides. A atualização visual posterior reorganiza o HTML e os estilos, preservando as regras e o comportamento da demonstração.
 
 ## Responsabilidades e avaliação antes de eventual implantação
 
