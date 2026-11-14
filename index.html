@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="SmartCheck Hotel: estudo de caso conceitual sobre pré-autorização por quarto, com simulação ilustrativa desenvolvida com apoio de IA."
+    />
+    <title>SmartCheck Hotel — Estudo de caso</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="core.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+    <header class="topo">
+      <a class="marca" href="#inicio"
+        ><span class="marca-icone" aria-hidden="true">S✓</span> SmartCheck
+        <span class="marca-hotel">HOTEL</span></a
+      >
+      <nav aria-label="Principal">
+        <a href="#simulacao">Simulação</a><a href="#impacto">Impacto</a
+        ><a href="#projeto">O projeto</a
+        ><a href="apresentacao/SmartCheck_Gestores.pptx" download
+          >Apresentação ↗</a
+        >
+      </nav>
+    </header>
+    <main id="conteudo">
+      <section class="hero" id="inicio">
+        <div>
+          <p class="eyebrow">PORTFÓLIO / LEODEVSN / ESTUDO DE CASO 01</p>
+          <h1>Menos consultas.<br />Mais atenção ao <em>hóspede.</em></h1>
+          <p class="lead">
+            Uma proposta para levar a pré-autorização do quarto até a abertura
+            da mesa — no momento em que o atendente precisa dela.
+          </p>
+          <a class="button" href="#simulacao"
+            >Explorar a simulação <span aria-hidden="true">↓</span></a
+          >
+          <p class="caption">
+            Estudo conceitual · Dados fictícios · Desenvolvido com apoio de IA
+          </p>
+        </div>
+        <aside class="hero-aside" aria-label="Resumo da proposta">
+          <p class="eyebrow">DA RECEPÇÃO À MESA</p>
+          <div class="quarto-visual">
+            <span>QUARTO</span><strong>1010</strong
+            ><span class="pill">ASSINA: SIM</span>
+          </div>
+          <p>Uma autorização por quarto.<br />Uma informação no atendimento.</p>
+          <div class="hero-metrica">
+            <strong>10–20<span>s</span></strong>
+            <p>
+              meta ilustrativa para o fluxo inicial<br /><small
+                >Estimativa a validar, sem medição real.</small
+              >
+            </p>
+          </div>
+        </aside>
+      </section>
+      <section class="contexto" aria-labelledby="contexto-titulo">
+        <span class="numero-secao">01 / O PROBLEMA</span>
+        <div>
+          <h2 id="contexto-titulo">
+            A informação existe.<br />O caminho até ela é que demora.
+          </h2>
+          <p>
+            No processo observado, cada hóspede pode exigir uma nova consulta.
+            Sem retorno direto à lista, o atendente precisa fechar o cadastro,
+            digitar o quarto novamente e repetir as etapas. Carregamentos e
+            travamentos podem ampliar a espera.
+          </p>
+        </div>
+        <aside>
+          <strong>2–3 min</strong><span>por atendimento no cenário atual</span
+          ><small
+            >Estimativa relatada pelo autor, quando o sistema não trava.
+            Validação operacional pendente.</small
+          >
+        </aside>
+      </section>
+      <section class="secao" id="simulacao">
+        <div class="section-head">
+          <div>
+            <p class="numero-secao">02 / EXPERIMENTE O FLUXO</p>
+            <h2>Do processo atual à proposta.</h2>
+          </div>
+          <p>
+            Explore o processo atual, altere o cadastro na recepção e consulte o
+            mesmo quarto na mesa.
+          </p>
+        </div>
+        <div class="aviso">
+          Demonstração ilustrativa, sem conexão com sistemas do hotel. Os
+          cliques e as esperas são acelerados; não medem os tempos estimados.
+        </div>
+        <div class="tabs" role="tablist" aria-label="Experiências da simulação">
+          <button
+            type="button"
+            id="tab-atual"
+            role="tab"
+            aria-controls="painel-atual"
+            aria-selected="true"
+            data-tab="atual"
+          >
+            01 <span>Processo atual</span><small>AS-IS</small>
+          </button>
+          <button
+            type="button"
+            id="tab-recepcao"
+            role="tab"
+            aria-controls="painel-recepcao"
+            aria-selected="false"
+            tabindex="-1"
+            data-tab="recepcao"
+          >
+            02 <span>Recepção</span><small>CADASTRO</small>
+          </button>
+          <button
+            type="button"
+            id="tab-proposto"
+            role="tab"
+            aria-controls="painel-proposto"
+            aria-selected="false"
+            tabindex="-1"
+            data-tab="proposto"
+          >
+            03 <span>Abertura da mesa</span><small>TO-BE</small>
+          </button>
+        </div>
+        <div
+          class="demo-panel"
+          role="tabpanel"
+          id="painel-atual"
+          aria-labelledby="tab-atual"
+        >
+          <div class="demo-info">
+            <p class="eyebrow">CONSULTA INDIVIDUAL</p>
+            <h3>A cada cadastro,<br />um novo caminho.</h3>
+            <p>
+              Cenário fictício: quarto 1010, com dois hóspedes. A autorização
+              está no segundo cadastro.
+            </p>
+            <ol class="passos">
+              <li>Consultar o quarto.</li>
+              <li>Abrir os detalhes.</li>
+              <li>Escolher um hóspede.</li>
+              <li>Procurar a autorização.</li>
+              <li>Reiniciar se não encontrar.</li>
+            </ol>
+            <p class="caption">
+              Este fluxo tem dados fixos para ilustrar a repetição. O cadastro
+              da recepção alimenta o fluxo proposto.
+            </p>
+          </div>
+          <div class="demo-work">
+            <div class="work-bar">
+              <span>SISTEMA ATUAL · FICTÍCIO</span
+              ><span id="atual-etapa">Consulta</span>
+            </div>
+            <div id="atual-tela"></div>
+            <p class="caption" id="atual-contagem" aria-live="polite"></p>
+          </div>
+        </div>
+        <div
+          class="demo-panel"
+          role="tabpanel"
+          id="painel-recepcao"
+          aria-labelledby="tab-recepcao"
+          hidden
+        >
+          <div class="demo-info">
+            <p class="eyebrow">AUTORIZAÇÃO POR QUARTO</p>
+            <h3>Três campos.<br />Uma referência.</h3>
+            <p>
+              Escolha um quarto fictício para editar seu cadastro. A autorização
+              vale para o quarto inteiro.
+            </p>
+            <div
+              class="room-buttons"
+              role="group"
+              aria-label="Quarto em edição"
+            >
+              <button type="button" data-room="1010" aria-pressed="true">
+                1010</button
+              ><button type="button" data-room="2020" aria-pressed="false">
+                2020</button
+              ><button type="button" data-room="3030" aria-pressed="false">
+                3030
+              </button>
+            </div>
+            <p class="caption">
+              Os dados ficam somente na memória desta página. Recarregar
+              restaura os exemplos.
+            </p>
+          </div>
+          <div class="demo-work">
+            <div class="work-bar">
+              <span>RECEPÇÃO · FICTÍCIA</span
+              ><span id="recepcao-quarto">Quarto 1010</span>
+            </div>
+            <form id="cadastro">
+              <fieldset>
+                <legend>Pré-autorização</legend>
+                <label class="radio"
+                  ><input type="radio" name="autorizada" value="sim" checked />
+                  Sim</label
+                ><label class="radio"
+                  ><input type="radio" name="autorizada" value="nao" />
+                  Não</label
+                >
+              </fieldset>
+              <label for="valor">Valor pré-aprovado (R$)</label
+              ><input
+                id="valor"
+                type="number"
+                min="0"
+                max="1000000"
+                step="0.01"
+                value="500"
+                required
+              />
+              <p class="caption">Quando NÃO, o valor não se aplica.</p>
+              <label for="observacao"
+                >Observação <span class="caption">(opcional)</span></label
+              ><textarea id="observacao" rows="3" maxlength="240">
+Consumo de alimentos e bebidas.</textarea
+              >
+              <button class="button" type="submit">Salvar autorização</button>
+              <p id="cadastro-status" role="status"></p>
+            </form>
+          </div>
+        </div>
+        <div
+          class="demo-panel"
+          role="tabpanel"
+          id="painel-proposto"
+          aria-labelledby="tab-proposto"
+          hidden
+        >
+          <div class="demo-info">
+            <p class="eyebrow">CONSULTA AUTOMÁTICA</p>
+            <h3>A informação chega<br />com a mesa.</h3>
+            <p>
+              Informe 1010, 2020 ou 3030. A janela apresenta os dados salvos na
+              recepção. Feche no X para lançar os pedidos.
+            </p>
+            <ol class="passos">
+              <li>Informar o quarto e abrir a mesa.</li>
+              <li>Ler a janela de pré-autorização.</li>
+              <li>Fechar no X e lançar itens.</li>
+            </ol>
+            <p class="caption">
+              Na mesa permanecem o quarto e ASSINA: SIM/NÃO. Valor e observação
+              ficam apenas no aviso.
+            </p>
+          </div>
+          <div class="demo-work">
+            <div class="work-bar">
+              <span>ATENDIMENTO · FICTÍCIO</span><span>TO-BE</span>
+            </div>
+            <form id="abertura">
+              <label for="quarto-mesa">Número do quarto</label>
+              <div class="inline">
+                <input
+                  id="quarto-mesa"
+                  type="text"
+                  inputmode="numeric"
+                  pattern="[0-9]{1,6}"
+                  maxlength="6"
+                  value="1010"
+                  required
+                /><button class="button" type="submit">Abrir mesa</button>
+              </div>
+              <p id="mesa-erro" role="alert"></p>
+            </form>
+            <div id="mesa" hidden>
+              <div class="mesa-cabecalho">
+                <h4 id="mesa-quarto"></h4>
+                <span class="pill" id="mesa-assina"></span>
+              </div>
+              <p class="caption">Pedidos simulados · sem cobrança</p>
+              <div
+                class="produtos"
+                role="group"
+                aria-label="Adicionar um pedido"
+              >
+                <button type="button" data-product="agua">
+                  + Água <small>R$ 6,00</small></button
+                ><button type="button" data-product="cafe">
+                  + Café <small>R$ 8,00</small></button
+                ><button type="button" data-product="lanche">
+                  + Lanche <small>R$ 24,00</small>
+                </button>
+              </div>
+              <ul id="pedidos" aria-label="Pedidos da mesa"></ul>
+              <p class="total">
+                Total dos pedidos <strong id="total">R$ 0,00</strong>
+              </p>
+              <button type="button" class="text-button" id="encerrar">
+                Encerrar mesa simulada
+              </button>
+              <p class="caption">
+                Sem integração financeira ou controle de saldo autorizado.
+              </p>
+            </div>
+            <p id="mesa-status" role="status"></p>
+          </div>
+        </div>
+        <noscript
+          ><p>
+            Ative JavaScript para usar a simulação. O contexto e a documentação
+            continuam disponíveis.
+          </p></noscript
+        >
+      </section>
+      <section class="impacto secao" id="impacto">
+        <div class="section-head">
+          <div>
+            <p class="numero-secao">03 / ESTIMATIVA DE IMPACTO</p>
+            <h2>Pequenas consultas.<br />Tempo que se acumula.</h2>
+          </div>
+          <p>
+            Natal, Réveillon e Carnaval podem ampliar a demanda. Explore uma
+            hipótese de esforço acumulado, sem incluir travamentos.
+          </p>
+        </div>
+        <div class="impacto-layout">
+          <div>
+            <label for="quantidade">Quantidade de atendimentos</label
+            ><input
+              id="quantidade"
+              type="number"
+              min="1"
+              max="10000"
+              step="1"
+              value="20"
+              required
+            />
+            <div class="presets">
+              <button type="button" data-count="20">20</button
+              ><button type="button" data-count="50">50</button
+              ><button type="button" data-count="100">100</button>
+            </div>
+            <p id="impacto-erro" role="alert"></p>
+            <p class="caption">
+              Atual: 120–180 s por atendimento.<br />Proposto: 10–20 s por
+              atendimento.<br />Estimativas a validar.
+            </p>
+          </div>
+          <div id="impacto-resultado" aria-live="polite">
+            <div class="bar-row">
+              <div>
+                <span>Processo atual</span><strong id="tempo-atual"></strong>
+              </div>
+              <div class="bar"><span class="bar-atual"></span></div>
+            </div>
+            <div class="bar-row">
+              <div>
+                <span>SmartCheck proposto</span
+                ><strong id="tempo-proposto"></strong>
+              </div>
+              <div class="bar"><span class="bar-proposto"></span></div>
+            </div>
+            <p class="caption">
+              Barras comparam os limites máximos de cada faixa.
+            </p>
+            <p class="economia">
+              Diferença hipotética de esforço
+              <strong id="tempo-economia"></strong>
+            </p>
+          </div>
+        </div>
+        <p class="nota">
+          Esses valores são hipóteses matemáticas, não resultados de
+          implantação. Representam tempo total de trabalho; não permitem
+          concluir o tempo de fila nem o ganho de produtividade real.
+        </p>
+      </section>
+      <section class="secao" id="projeto">
+        <div class="section-head">
+          <div>
+            <p class="numero-secao">04 / DO CONCEITO À VALIDAÇÃO</p>
+            <h2>Uma proposta para conversar.<br />Um fluxo para testar.</h2>
+          </div>
+          <a class="text-button" href="docs/GUIA-DO-CODIGO.md"
+            >Ler o código em blocos ↗</a
+          >
+        </div>
+        <div class="processos">
+          <article>
+            <h3>Hoje · AS-IS</h3>
+            <ol class="flow">
+              <li>Digitar quarto</li>
+              <li>Abrir detalhes e escolher hóspede</li>
+              <li>Consultar cadastro individual</li>
+              <li>Não encontrou? Fechar e recomeçar pelo quarto</li>
+            </ol>
+          </article>
+          <article>
+            <h3>Proposta · TO-BE</h3>
+            <ol class="flow">
+              <li>Recepção registra autorização por quarto</li>
+              <li>Atendente abre a mesa com o quarto</li>
+              <li>Aviso automático: autorização, valor e observação</li>
+              <li>Fechar aviso → ASSINA: SIM/NÃO → pedidos</li>
+            </ol>
+          </article>
+        </div>
+        <div class="proximos">
+          <h3>Próximos passos</h3>
+          <p>
+            <strong>01.</strong> Validar o fluxo e medir tempos com
+            profissionais da operação.
+          </p>
+          <p>
+            <strong>02.</strong> Avaliar viabilidade com TI interna ou
+            fornecedor do sistema.
+          </p>
+          <p>
+            <strong>03.</strong> Testar um piloto autorizado antes de considerar
+            implantação.
+          </p>
+        </div>
+        <details class="retrospectiva">
+          <summary>
+            Como pensei e desenvolvi esta solução — Perspectiva da IA
+          </summary>
+          <div>
+            <p>
+              O ponto de partida foi um problema observado pelo autor no
+              trabalho em hotelaria: alcançar uma informação já existente exigia
+              consultas repetidas. O mapeamento AS-IS descreveu as telas e a
+              necessidade de recomeçar a busca; o TO-BE propôs trazer a
+              informação à abertura da mesa.
+            </p>
+            <p>
+              Segundo o relato de planejamento fornecido, o autor corrigiu
+              diversas interpretações da IA sobre o processo real. Os requisitos
+              consolidados registram essa orientação: autorização por quarto,
+              três campos na recepção, aviso temporário e permanência apenas de
+              ASSINA: SIM/NÃO. O conhecimento operacional guiou o refinamento
+              dos requisitos e das regras de negócio.
+            </p>
+            <p>
+              A proposta aborda usabilidade ao reduzir a navegação repetida e
+              organizar a informação no momento da decisão. A preocupação com
+              experiência do usuário aparece no aviso breve e no indicador de
+              fechamento. A visão de negócio conecta o fluxo à alta demanda, sem
+              tratar estimativas como produtividade comprovada.
+            </p>
+            <p>
+              O planejamento prevê validação com colegas, medição de tempos e
+              avaliação técnica com os responsáveis pelo sistema. O uso crítico
+              da IA inclui revisar interpretações, explicar o código e registrar
+              limites. A demonstração aplica modelagem de dados, eventos,
+              estados de interface, validação e testes; não contém um modelo de
+              IA em execução.
+            </p>
+            <p class="nota">
+              Análise descritiva produzida com apoio do ChatGPT, baseada no
+              documento e nas interações de planejamento disponíveis. Não
+              constitui avaliação profissional independente, certificação ou
+              comprovação de resultados.
+            </p>
+          </div>
+        </details>
+      </section>
+    </main>
+    <footer>
+      <a class="marca" href="#inicio">SmartCheck Hotel</a>
+      <p>Estudo de caso de LeoDevsn · Apoio do ChatGPT no desenvolvimento</p>
+      <p>Conceitual e demonstrativo. Sem implantação ou integração real.</p>
+    </footer>
+    <dialog
+      id="aviso-autorizacao"
+      aria-labelledby="aviso-titulo"
+      aria-describedby="aviso-contexto"
+    >
+      <div class="dialog-head">
+        <span class="eyebrow">PRÉ-AUTORIZAÇÃO</span
+        ><button
+          type="button"
+          id="fechar-aviso"
+          class="close"
+          aria-label="Fechar aviso de pré-autorização"
+        >
+          ×
+        </button>
+      </div>
+      <h2 id="aviso-titulo"></h2>
+      <p id="aviso-contexto">
+        Informação vinculada ao quarto, cadastrada na recepção.
+      </p>
+      <p id="aviso-situacao" class="dialog-status"></p>
+      <p id="aviso-valor"></p>
+      <p id="aviso-observacao"></p>
+      <p class="caption">Feche no X para continuar lançando itens.</p>
+    </dialog>
+  </body>
+</html>
