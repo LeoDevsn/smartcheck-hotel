@@ -1,8 +1,8 @@
 # Fluxos do SmartCheck Hotel
 
-Diagramas conceituais. Não descrevem uma integração implantada. Podem ser renderizados pelo GitHub e por editores compatíveis com Mermaid.
+A observação operacional e a solução conceitual são de LeoDevsn. O Codex apoiou sua documentação e criou os fluxos técnicos do protótipo. Os diagramas não reproduzem o sistema real do hotel nem descrevem uma integração implantada. Podem ser renderizados pelo GitHub e por editores compatíveis com Mermaid.
 
-## Processo atual — AS-IS
+## Processo real relatado pelo autor — AS-IS
 
 ```mermaid
 flowchart TD
@@ -17,25 +17,35 @@ flowchart TD
     H -->|Não| I[Informação não localizada nos cadastros consultados]
 ```
 
-Não localizar uma autorização não equivale a uma autorização negada. Carregamentos podem ocorrer nas transições; travamentos reais não são reproduzidos. A demonstração fixa dois cadastros fictícios no quarto 1010 para evidenciar a repetição.
+Não localizar uma autorização não equivale a uma autorização negada. Carregamentos podem ocorrer nas transições; travamentos reais não são reproduzidos. Para ilustrar esse relato, o Codex escolheu dois cadastros fictícios no quarto 1010. Essa massa de dados não é uma informação real do hotel.
 
-## Processo proposto — TO-BE
+## Solução conceitual definida pelo autor — TO-BE
+
+Este fluxo contém os requisitos centrais idealizados por LeoDevsn. O tratamento de exceções deve ser avaliado antes de uma eventual implantação.
 
 ```mermaid
 flowchart TD
-    A[Recepção seleciona quarto] --> B[Registra SIM ou NÃO, valor e observação opcional]
-    B --> C[Salva autorização vinculada ao quarto]
-    C --> D[Atendente informa quarto e abre mesa]
-    D --> E{Quarto cadastrado?}
-    E -->|Não| F[Informar ausência de cadastro e manter mesa fechada]
-    E -->|Sim| G[Abrir aviso automaticamente]
-    G --> H[Exibir SIM ou NÃO; valor se SIM; observação se preenchida]
-    H --> I[Atendente fecha aviso no X]
-    I --> J[Mesa mostra quarto e ASSINA: SIM ou NÃO]
-    J --> K[Lançar pedidos fictícios]
+    A[Recepção cadastra autorização por quarto] --> B[SIM ou NÃO, valor pré-aprovado e observação opcional]
+    B --> C[Atendente abre mesa e informa quarto]
+    C --> D[Aviso automático com informações da autorização]
+    D --> E[Fechar aviso e continuar lançando pedidos]
+    E --> F[Mesa mantém quarto e ASSINA: SIM ou NÃO]
 ```
 
-## Circulação dos dados no código
+## Fluxo técnico escolhido pelo Codex para a demonstração
+
+O bloqueio abaixo é uma escolha do protótipo, não um requisito operacional original do autor. O mesmo se aplica à mesa única, reapresentação do aviso, descarte de pedidos e demais limitações registradas no README.
+
+```mermaid
+flowchart TD
+    A[Informar quarto na demonstração] --> B{Quarto fictício cadastrado?}
+    B -->|Não| C[Mostrar ausência e manter mesa fechada no protótipo]
+    B -->|Sim| D[Consultar objeto na memória e abrir aviso]
+    D --> E[Fechar aviso e lançar itens fictícios]
+    E --> F[Encerrar a única mesa e descartar pedidos simulados]
+```
+
+## Circulação dos dados na implementação do Codex
 
 ```mermaid
 flowchart LR

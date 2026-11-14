@@ -12,7 +12,9 @@ Data: 14/11/2026. Ambiente: Linux, Node.js e Python. As verificações abaixo fo
 | Vínculos locais de scripts, CSS, guia e apresentação | Arquivos de destino presentes |
 | Apresentação PPTX | ZIP íntegro, cinco slides, elementos dentro dos limites de página |
 
-## Cobertura dos 10 testes
+## Cobertura dos 10 testes — comportamentos do protótipo
+
+Os testes exercitam escolhas de implementação do Codex e a representação dos requisitos centrais na interface. Aprovação técnica dos testes não transforma essas escolhas em requisitos do autor ou regras aprovadas pelo hotel. Os testes e o código permanecem inalterados nesta revisão.
 
 1. Alterar um quarto preserva os demais e não modifica os exemplos de outra sessão.
 2. NÃO zera o valor e observação vazia é permitida.
@@ -31,7 +33,7 @@ A infraestrutura de controle de navegador prevista para este ambiente não estav
 
 Os testes de interface usam jsdom e substituem `showModal` e `close` por implementações simplificadas. Eles verificam a lógica e a atualização do DOM, não o comportamento completo do navegador. A apresentação foi verificada estruturalmente; não foi renderizada por PowerPoint ou LibreOffice, portanto a revisão visual final dos slides permanece pendente.
 
-Não se afirma conformidade WCAG, aprovação operacional, integração com hotel, produtividade medida ou homologação. A estimativa de 10–20 s e a de 2–3 min ainda exigem medição com profissionais da operação.
+Não se afirma conformidade WCAG, aprovação operacional, integração com hotel, produtividade medida ou homologação. Os 2–3 min são uma estimativa relatada pelo autor, sem medição formal; os 10–20 s são uma meta ilustrativa da proposta, não um resultado alcançado. Medição e avaliação com profissionais da operação permanecem pendentes.
 
 ## Roteiro de revisão manual recomendado
 

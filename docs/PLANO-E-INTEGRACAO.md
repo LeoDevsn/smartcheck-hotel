@@ -1,5 +1,7 @@
 # Análise do portfólio e plano de integração
 
+A observação do problema e a idealização da melhoria são de LeoDevsn. As recomendações de organização, tecnologias e implementação deste registro foram propostas pelo Codex para viabilizar a demonstração; não constituem requisitos operacionais do hotel. A distinção atual entre requisitos do autor e escolhas do protótipo está no README.
+
 ## Inspeção realizada
 
 Consulta somente de leitura pelo conector GitHub em 14/11/2026. A busca `user:LeoDevsn` retornou 26 repositórios acessíveis. Foram aprofundadas a raiz e o README dos candidatos relevantes abaixo. Não se afirma revisão completa do código de todos os repositórios.
